@@ -4,7 +4,7 @@
 <suite name="Netafim suite" >
     <test name="test" >
         <classes>
-            <class name="tests.Tests" />
+            <class name="tests.LoginPageTests" />
         </classes>
     </test>
 </suite>

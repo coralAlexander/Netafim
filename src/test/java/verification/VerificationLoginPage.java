@@ -6,11 +6,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class Verification {
+public class VerificationLoginPage {
 
     WebDriverWait wait;
 
-    public Verification(WebDriverWait wait) {
+    public VerificationLoginPage(WebDriverWait wait) {
         this.wait = wait;
     }
 
@@ -26,5 +26,10 @@ public class Verification {
     public void assertWrongQuantityOfCharactersInPasswordField(WebElement element,String expectedResult){
         wait.until(ExpectedConditions.visibilityOfAllElements(element));
         assertThat(element.getAttribute("innerText")).as("Wrong number of characters in password field").isEqualTo(expectedResult);
+    }
+
+    public void assertThatSpecificFarmName(WebElement element){
+        wait.until(ExpectedConditions.visibilityOfAllElements(element));
+        assertThat(element.getAttribute("innerText")).as("Wrong number of characters in password field").isEqualTo("alex");
     }
 }

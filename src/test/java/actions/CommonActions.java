@@ -25,7 +25,7 @@ public class CommonActions {
         this.wait = wait;
     }
     
-  /*  public void pressEnter(WebElement searchField) {
+    public void pressEnter(WebElement searchField) {
         waitForElement(searchField);
         searchField.sendKeys(Keys.ENTER);
     }
@@ -33,7 +33,7 @@ public class CommonActions {
     public void enter(WebElement element) {
         threadSleep(2000);
         builder.sendKeys(Keys.ENTER).perform();
-    }*/
+    }
 
     public void click(WebElement element) {
         waitForElement(element);

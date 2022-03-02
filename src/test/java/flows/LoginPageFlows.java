@@ -1,16 +1,16 @@
 package flows;
 
 import org.openqa.selenium.WebElement;
-import pages.LandingPage;
+import pages.HomePage;
 import pages.LoginPage;
 
 public class LoginPageFlows {
 
     private LoginPage loginPage = new LoginPage();
 
-    public LandingPage loginWithUserPassword(String userName, String password){
+    public HomePage loginWithUserPassword(String userName, String password){
         login(userName,password);
-        return new LandingPage();
+        return new HomePage();
     }
 
     public LoginPageFlows loginFailed(String userName, String password){
@@ -37,5 +37,6 @@ public class LoginPageFlows {
         loginPage.fillUserName(userName);
         loginPage.fillPassword(password);
         loginPage.pressLoginButton();
+
     }
 }

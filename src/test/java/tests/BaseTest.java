@@ -1,5 +1,6 @@
 package tests;
 
+import flows.HomePageFlows;
 import flows.LoginPageFlows;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -7,7 +8,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import utils.DriverFactory;
 import utils.HelpMethods;
-import verification.Verification;
+import verification.VerificationCrossPages;
+import verification.VerificationHomePage;
+import verification.VerificationLoginPage;
 
 import static utils.PropertyReader.getBrowser;
 import static utils.PropertyReader.getLoginUrl;
@@ -15,11 +18,14 @@ import static utils.PropertyReader.getLoginUrl;
 public abstract class BaseTest {
 
     private static WebDriver driver;
-    protected Verification verification;
+    protected VerificationLoginPage verificationLoginPage;
+    protected VerificationHomePage verificationHomePage;
+    protected VerificationCrossPages verificationCrossPages;
     private WebDriverWait wait;
     protected HelpMethods helpMethods;
 
     LoginPageFlows loginPageFlows;
+    HomePageFlows homePageFlows;
 
     public static WebDriver getDriver() {
         return driver;
@@ -30,13 +36,24 @@ public abstract class BaseTest {
         driver = DriverFactory.getDriver(getBrowser());
         driver.get(getLoginUrl());
         loginPageFlows = new LoginPageFlows();
+        homePageFlows = new HomePageFlows();
         wait = new WebDriverWait(driver,5);
-        verification = new Verification(wait);
+        verificationLoginPage = new VerificationLoginPage(wait);
+        verificationHomePage = new VerificationHomePage(wait);
+        verificationCrossPages = new VerificationCrossPages(wait);
         helpMethods = new HelpMethods(driver);
     }
 
     @AfterMethod
     public void tearDown() {
         driver.quit();
+    }
+
+    public void threadSleep(Integer timeMs){
+        try {
+            Thread.sleep(timeMs);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

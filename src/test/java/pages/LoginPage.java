@@ -23,7 +23,7 @@ public class LoginPage extends Base {
     @FindBy(xpath = "//*[contains(text(), 'Disabled user - please contact support')]")
     private WebElement text;
     @FindBy(css = "button[type='submit']")
-    private WebElement loginButton;
+    WebElement loginButton;
 
     public void fillUserName(String user) {
         commonActions.addText(userNameField, user);
