@@ -4,7 +4,7 @@
 <suite name="Netafim suite" >
     <test name="test" >
         <classes>
-            <class name="tests.LoginPageTests" />
+            <class name="selenium.tests.LoginPageTests" />
         </classes>
     </test>
 </suite>
