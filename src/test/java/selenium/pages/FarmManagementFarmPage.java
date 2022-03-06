@@ -4,9 +4,9 @@ import selenium.base.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class FarmManagementPage extends Base {
+public class FarmManagementFarmPage extends Base {
 
-    public FarmManagementPage() {
+    public FarmManagementFarmPage() {
         super();
     }
 
@@ -18,7 +18,7 @@ public class FarmManagementPage extends Base {
         commonActions.click(irrigationBlock);
     }
 
-    public void moveToCoordinatesAndClick(int x , int y){
+   /* public void moveToCoordinatesAndClick(int x , int y){
         commonActions.clickByCoordinates(x,y);
-    }
+    }*/
 }

@@ -1,5 +1,6 @@
 package selenium.flows;
 
+import selenium.pages.IrrigationBlocksEditPage;
 import selenium.pages.IrrigationBlocksPage;
 
 public class IrrigationBlocksPageFlows {
@@ -17,5 +18,11 @@ public class IrrigationBlocksPageFlows {
         //irrigationBlocksPage.pressEnter();
 
         return this;
+    }
+
+    public  IrrigationBlocksEditPage chooseBlockEditOption(){
+        irrigationBlocksPage.clickOnSelectEditOption();
+        irrigationBlocksPage.clickOnBlockEditButton();
+        return new IrrigationBlocksEditPage();
     }
 }

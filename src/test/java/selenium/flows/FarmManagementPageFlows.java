@@ -1,11 +1,11 @@
 package selenium.flows;
 
-import selenium.pages.FarmManagementPage;
+import selenium.pages.FarmManagementFarmPage;
 import selenium.pages.IrrigationBlocksPage;
 
 public class FarmManagementPageFlows  {
 
-   private FarmManagementPage farmManagementPage = new FarmManagementPage();
+   private FarmManagementFarmPage farmManagementPage = new FarmManagementFarmPage();
 
 
    public IrrigationBlocksPage selectIrrigationBlockTab(){

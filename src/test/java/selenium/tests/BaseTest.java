@@ -1,9 +1,6 @@
 package selenium.tests;
 
-import selenium.flows.FarmManagementPageFlows;
-import selenium.flows.HomePageFlows;
-import selenium.flows.IrrigationBlocksPageFlows;
-import selenium.flows.LoginPageFlows;
+import selenium.flows.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -30,6 +27,8 @@ public abstract class BaseTest {
     HomePageFlows homePageFlows;
     FarmManagementPageFlows farmManagementPageFlows;
     IrrigationBlocksPageFlows irrigationBlocksPageFlows;
+    IrrigationBlocksEditPageFlows irrigationBlocksEditFlows;
+
 
     public static WebDriver getDriver() {
         return driver;
@@ -43,6 +42,7 @@ public abstract class BaseTest {
         homePageFlows = new HomePageFlows();
         farmManagementPageFlows = new FarmManagementPageFlows();
         irrigationBlocksPageFlows = new IrrigationBlocksPageFlows();
+        irrigationBlocksEditFlows = new IrrigationBlocksEditPageFlows();
         wait = new WebDriverWait(driver,5);
         verificationLoginPage = new VerificationLoginPage(wait);
         verificationHomePage = new VerificationHomePage(wait);

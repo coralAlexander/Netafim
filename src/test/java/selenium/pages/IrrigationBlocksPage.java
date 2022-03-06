@@ -14,6 +14,10 @@ public class IrrigationBlocksPage extends Base {
 
     @FindBy(xpath = "(//button[contains(@type,'button')])[3]")
     private WebElement drawIrrigationBlockButton;
+    @FindBy(xpath = "(//span[contains(@aria-haspopup,'true')])[1]")
+    private WebElement blockEditOption;
+    @FindBy(xpath = "(//button[contains(@role,'menuitem')])[1]")
+    private WebElement blockEditButton;
 
     public void clickOnIrrigationDrawBlockButton(){
         commonActions.click(drawIrrigationBlockButton);
@@ -25,5 +29,13 @@ public class IrrigationBlocksPage extends Base {
 
     public void pressEnter(){
         commonActions.enter();
+    }
+
+    public void clickOnSelectEditOption(){
+        commonActions.click(blockEditOption);
+    }
+
+    public void clickOnBlockEditButton(){
+        commonActions.click(blockEditButton);
     }
 }

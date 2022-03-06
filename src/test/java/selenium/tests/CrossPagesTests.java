@@ -12,7 +12,10 @@ public class CrossPagesTests extends BaseTest {
         loginPageFlows.loginWithUserPassword(getUser(), getPassword());
         homePageFlows.chooseElementFromSideBar();
         farmManagementPageFlows.selectIrrigationBlockTab();
-        irrigationBlocksPageFlows.drawIrrigationBlock();
+        //irrigationBlocksPageFlows.drawIrrigationBlock();
+        //threadSleep(1000);
+        irrigationBlocksPageFlows.chooseBlockEditOption();
+        verificationCrossPages.verifyIrrigationBlockName(irrigationBlocksEditFlows.getBlockParameter());
         System.out.println("Success");
     }
 }

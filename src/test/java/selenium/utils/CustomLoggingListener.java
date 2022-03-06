@@ -16,30 +16,30 @@ public class CustomLoggingListener extends AbstractWebDriverEventListener {
 
     @Override
     public void afterNavigateTo(String url, WebDriver driver) {
-        String messageId = UUID.randomUUID().toString();
-        System.out.println(messageId + " : Navigating to [" + url + "] with driver [" + driver + "]");
-        takeScreenShot(messageId, driver);
+//        String messageId = UUID.randomUUID().toString();
+//        System.out.println(messageId + " : Navigating to [" + url + "] with driver [" + driver + "]");
+//        takeScreenShot(messageId, driver);
     }
 
     @Override
     public void beforeFindBy(By by, WebElement element, WebDriver driver) {
-        String messageId = UUID.randomUUID().toString();
-        System.out.println(messageId + " : Try to locate element using [" + by + "] and driver [" + driver + "] and element [" + element + "]");
-        takeScreenShot(messageId, driver);
+//        String messageId = UUID.randomUUID().toString();
+//        System.out.println(messageId + " : Try to locate element using [" + by + "] and driver [" + driver + "] and element [" + element + "]");
+//        takeScreenShot(messageId, driver);
     }
 
     @Override
     public void beforeClickOn(WebElement element, WebDriver driver) {
-        String messageId = UUID.randomUUID().toString();
-        System.out.println(messageId + " : Clicking element [" + element + "] with driver [" + driver + "]");
-        takeScreenShot(messageId, driver);
+//        String messageId = UUID.randomUUID().toString();
+//        System.out.println(messageId + " : Clicking element [" + element + "] with driver [" + driver + "]");
+//        takeScreenShot(messageId, driver);
     }
 
     @Override
     public void afterClickOn(WebElement element, WebDriver driver) {
-        String messageId = UUID.randomUUID().toString();
-        System.out.println(messageId + " : Clicked element [" + element + "] with driver [" + driver + "]");
-        takeScreenShot(messageId, driver);
+//        String messageId = UUID.randomUUID().toString();
+//        System.out.println(messageId + " : Clicked element [" + element + "] with driver [" + driver + "]");
+//        takeScreenShot(messageId, driver);
     }
 
     private void takeScreenShot(String name, WebDriver driver){
